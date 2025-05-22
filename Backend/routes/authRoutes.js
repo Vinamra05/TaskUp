@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" }); 
+const upload = require("../middlewares/uploadMiddleware");
 const {
   registerUser,
   loginUser,
@@ -9,7 +8,7 @@ const {
   updateUserProfile,
 } = require("../controllers/authController");
 const { protect } = require("../middlewares/authMiddleware");
-const authRoutes = require("../routes/authRoutes");
+// const authRoutes = require("../routes/authRoutes");
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
