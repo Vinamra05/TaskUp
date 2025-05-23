@@ -34,10 +34,10 @@ const taskSchema = new mongoose.Schema({
         type: Date,
         default: null,
     },
-    assignedTo: {
+    assignedTo: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-    },
+    }],
     attachments: [{
         type: String,
     }],
