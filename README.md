@@ -99,8 +99,8 @@ Make sure to create a `.env` file inside the `backend/` directory with the follo
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://vinamrasharma0523:OeNrYBO1PtQE1ZTu@taskup.hgfkqlx.mongodb.net/
-JWT_SECRET=vinamra_secret
+MONGO_URI
+JWT_SECRET
 ADMIN_INVITE_TOKEN=051723
 ```
 
