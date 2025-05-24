@@ -1,11 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./config/Db");
+const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const app = express();
+
 
 app.use(cors({
     origin:process.env.ClIENT_URL||"*",
@@ -18,9 +19,13 @@ connectDB();
 app.use(express.json());
 
 
+
+
 app.use("/api/auth",authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", taskRoutes);
+
+
 
 
 
