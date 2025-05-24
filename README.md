@@ -89,7 +89,7 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:5173` for frontend and `http://localhost:5000` for backend.
+Visit `http://localhost:5173` for frontend and `http://localhost:8000` for backend.
 
 ---
 
@@ -97,17 +97,18 @@ Visit `http://localhost:5173` for frontend and `http://localhost:5000` for backe
 
 Make sure to create a `.env` file inside the `backend/` directory with the following:
 
+
 ```env
-PORT=5000
+PORT
 MONGO_URI
 JWT_SECRET
-ADMIN_INVITE_TOKEN=051723
+ADMIN_INVITE_TOKEN
 ```
 
 Also create a `.env` in the `frontend/` directory:
 
 ```env
-VITE_REACT_APP_API_URL=http://localhost:5000
+VITE_REACT_APP_API_URL=http://localhost:8000
 ```
 
 ---
