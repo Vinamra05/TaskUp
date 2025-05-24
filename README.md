@@ -97,6 +97,8 @@ Visit `http://localhost:5173` for frontend and `http://localhost:8000` for backe
 
 Make sure to create a `.env` file inside the `backend/` directory with the following:
 
+Here is a Drive Link for Accessing the Environment Varibales Go Through it: https://docs.google.com/document/d/18w-VA9zFPPP00S4BKldW5YuqAp56A9pT/edit?usp=sharing&ouid=104052691839938818023&rtpof=true&sd=true
+
 
 ```env
 PORT
