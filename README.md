@@ -31,6 +31,29 @@ TaskUp is a team task management application built with **Node.js**, **Express.j
 
 ---
 
+## 📘 API Documentation with Swagger
+
+This project includes **Swagger UI** for visual and interactive API documentation.
+
+### 🧭 How to Access:
+
+After starting the backend, visit:
+Here, you can:
+
+* Test APIs interactively
+* See all request/response schemas
+* Authorize using JWT token for protected routes
+
+### 🔐 Authorizing with JWT Token in Swagger
+
+Click on the **"Authorize"** button in Swagger UI and paste your token like this:
+
+* Bearer eyJhbGciOiJIUzI1NiIsInR...
+
+Then hit **"Authorize"** and you’re ready to test secured routes!
+
+---
+
 ## 🧪 API Testing
 
 A `test_apis.bat` file is included to test all available backend endpoints. To use it:
