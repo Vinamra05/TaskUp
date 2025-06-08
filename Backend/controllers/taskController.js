@@ -5,9 +5,17 @@ const getTasks = async (req, res) => {
     const { status } = req.query;
     let filter = {};
 
-    if (status) {
-      filter.status = status;
-    }
+   const allowedStatusesMap = {
+  pending: "Pending",
+  "in progress": "In Progress",
+  completed: "Completed",
+};
+
+if (status && allowedStatusesMap[status.toLowerCase()]) {
+  filter.status = allowedStatusesMap[status.toLowerCase()];
+}
+
+
 
     let tasks;
 
@@ -84,6 +92,7 @@ const getTaskById = async (req, res) => {
 
     res.json(task);
   } catch (error) {
+    
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
@@ -121,7 +130,7 @@ const createTask = async (req, res) => {
       task,
     });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error" ,error});
   }
 };
 

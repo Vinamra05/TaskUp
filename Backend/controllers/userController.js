@@ -1,6 +1,7 @@
-const task = require("../models/Task");
+const Task = require("../models/Task");
+
 const User = require("../models/User");
-const bcrypt = require("bcryptjs");
+
 
 const getUsers = async (req, res) => {
   try {
@@ -49,6 +50,19 @@ const getUserById = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ message: "User Not Found.." });
+    }
+    await user.deleteOne();
+    await Task.updateMany(
+      {
+        assignedTo: user._id,
+      },
+      { $pull: { assignedTo: user._id } }
+    );
+
+    res.status(200).json({message:"user deleted Successfully"});
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -56,6 +70,6 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
   getUsers,
-  getUserById
-
+  getUserById,
+  deleteUser
 };
